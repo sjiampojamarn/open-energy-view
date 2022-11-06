@@ -23,4 +23,4 @@ export CERT_PATH=test/cert/cert.crt
 export KEY_PATH=test/cert/private.key
 export API_RESPONSE_KEY=xS5MqJ6N9CyH-hvqAGrmBVAxFMOyauMpdrdqCZa1eqo=
 export IP_AND_PORT=$(hostname -I | awk '{print $1}'):5000
-celery worker --app open_energy_view.celery_tasks --hostname=celery.cpus@%h --queues=cpu --loglevel=info --concurrency=1
+celery --app open_energy_view.celery_tasks worker --hostname=celery.cpus@%h --queues=cpu --loglevel=info --concurrency=1
