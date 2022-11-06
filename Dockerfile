@@ -14,6 +14,6 @@ COPY . .
 RUN pip3 install -r requirements.txt
 
 WORKDIR /open-energy-view/open_energy_view/frontend
-RUN nvm use 10 && npm install && npm run build
+RUN nvm install 10 && nvm use 10 && npm install && npm run build
 
 EXPOSE 5000
