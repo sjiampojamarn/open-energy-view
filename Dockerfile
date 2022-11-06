@@ -10,3 +10,8 @@ WORKDIR /open-energy-view
 COPY . .
 
 RUN pip3 install -r requirements.txt
+
+WORKDIR /open-energy-view/open_energy_view/frontend
+RUN npm install && npm run build
+
+EXPOSE 5000
